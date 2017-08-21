@@ -16,7 +16,7 @@
 
             <Entry x:Name="quantityEntry"
                    Keyboard="Numeric"
-                   Placeholder="How many have you had?"/>
+                   Placeholder="How many?"/>
 
             <Button x:Name="saveButton"
                     Text="Save"
