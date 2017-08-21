@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SampleWhatsMyBAC.Views.DrinksOverviewPage">
+    <ContentPage.Content>
+        <StackLayout
+            Spacing="10"
+            Padding="10">
+            <Label x:Name="headerLabel"
+                   Text="What's My BAC"
+                   FontSize="30"
+                   VerticalOptions="Start"/>
+
+            <Button x:Name="addDrinkButton"
+                    BackgroundColor="Green"
+                    Text="Add Drink"
+                    TextColor="White"
+                    Clicked="addDrinkButton_Clicked"/>
+
+            <Label x:Name="howManyHoursLabel"
+                   Text="How many hours have you been drinking?"
+                   FontSize="18"/>
+
+            <Entry x:Name="howManyHoursEntry"
+                   Placeholder="Hours"
+                   Keyboard="Numeric"
+                   TextChanged="howManyHoursEntry_TextChanged"/>
+
+            <ListView x:Name="drinksList"
+                      HeightRequest="250"
+                      ItemSelected="drinksList_ItemSelected"/>
+
+            <Label x:Name="resultsLabel"
+                   TextColor="Red"
+                   FontSize="24"
+                   Text=""/>
+
+            <Button x:Name="clearButton"
+                    Text="Clear"
+                    BackgroundColor="Red"
+                    TextColor="White"
+                    Clicked="clearButton_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

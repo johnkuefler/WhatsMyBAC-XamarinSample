@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SampleWhatsMyBAC.Views.AgreementPage">
+    <ContentPage.Content>
+        <StackLayout
+          Spacing="10"
+          Padding="10">
+            <Label x:Name="headerLabel"
+                 Text="Terms of Use"
+                 FontSize="30"
+                 VerticalOptions="Start"/>
+
+            <Label x:Name="agreementLabel"
+                 FontSize="24"
+                 Text="I understand that the calculations used in this app are estimates and should not be used as the sole decison maker for my actions. I also agree that the creators of this app are not liable for my own actions or any consequences of them."
+                 VerticalOptions="StartAndExpand"/>
+
+            <Button x:Name="agreeButton"
+                    BackgroundColor="Green"
+                    Text="I Agree"
+                    TextColor="White"
+                    VerticalOptions="End"
+                    Clicked="agreeButton_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

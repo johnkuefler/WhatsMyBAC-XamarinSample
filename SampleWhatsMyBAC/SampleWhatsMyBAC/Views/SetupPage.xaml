@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SampleWhatsMyBAC.Views.SetupPage">
+    <ContentPage.Content>
+        <StackLayout
+            Spacing="10"
+            Padding="10">
+            <Label x:Name="headerLabel"
+                   Text="Setup"
+                   FontSize="30"
+                   VerticalOptions="Start"/>
+
+            <Entry x:Name="weightEntry"
+                   Placeholder="Weight (in lbs)"
+                   Keyboard="Numeric"/>
+
+            <Picker x:Name="genderPicker"
+                    Title="Gender">
+                <Picker.Items>
+                    <x:String>Female</x:String>
+                    <x:String>Male</x:String>
+                </Picker.Items>
+            </Picker>
+
+            <Button x:Name="saveButton"
+                    BackgroundColor="Green"
+                    Text="Save"
+                    TextColor="White"
+                    VerticalOptions="End"
+                    Clicked="saveButton_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
