@@ -16,6 +16,7 @@ namespace SampleWhatsMyBAC.Views
         public SetupPage()
         {
             InitializeComponent();
+
             if (Settings.PersonData != null)
             {
                 this.genderPicker.SelectedIndex = this.genderPicker.Items.IndexOf(Settings.PersonData.Gender);
@@ -35,7 +36,7 @@ namespace SampleWhatsMyBAC.Views
             person.Weight = float.Parse(weightEntry.Text);
             Settings.PersonData = person;
 
-            App.Current.MainPage = new MainPage();
+            App.Current.MainPage = new NavigationPage(new MainPage());
         }
     }
 }

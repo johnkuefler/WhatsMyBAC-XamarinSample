@@ -1,43 +1,43 @@
 // Helpers/Settings.cs
-using Newtonsoft.Json;
 using Plugin.Settings;
 using Plugin.Settings.Abstractions;
-using SampleWhatsMyBAC.Models;
 
 namespace SampleWhatsMyBAC.Helpers
 {
-    public static class Settings
-    {
-        private const string UserJson = "";
-        private static readonly string UserJsonDefault = string.Empty;
+	/// <summary>
+	/// This is the Settings static class that can be used in your Core solution or in any
+	/// of your client applications. All settings are laid out the same exact way with getters
+	/// and setters. 
+	/// </summary>
+	public static class Settings
+	{
+		private static ISettings AppSettings
+		{
+			get
+			{
+				return CrossSettings.Current;
+			}
+		}
 
-        private static ISettings AppSettings
-        {
-            get
-            {
-                return CrossSettings.Current;
-            }
-        }
+		#region Setting Constants
 
-        public static Person UserData
-        {
-            get
-            {
-                string data = AppSettings.GetValueOrDefault(UserJson, UserJsonDefault);
-                if (string.IsNullOrEmpty(data))
-                {
-                    return null;
-                }
-                else
-                {
-                    return JsonConvert.DeserializeObject<Person>(data);
-                }
-            }
-            set
-            {
-                string data = JsonConvert.SerializeObject(value);
-                AppSettings.AddOrUpdateValue(UserJson, data);
-            }
-        }
-    }
+		private const string SettingsKey = "settings_key";
+		private static readonly string SettingsDefault = string.Empty;
+
+		#endregion
+
+
+		public static string GeneralSettings
+		{
+			get
+			{
+				return AppSettings.GetValueOrDefault(SettingsKey, SettingsDefault);
+			}
+			set
+			{
+				AppSettings.AddOrUpdateValue(SettingsKey, value);
+			}
+		}
+
+	}
 }

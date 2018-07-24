@@ -25,7 +25,7 @@ namespace SampleWhatsMyBAC.Views
             {
                 GlobalConfig.ActiveDrinksList.Add(GlobalConfig.DrinksMasterList.Where(rec => rec.Name == drinksPicker.Items[drinksPicker.SelectedIndex]).FirstOrDefault());
             }
-            Navigation.PushAsync(new MainPage());
+            App.Current.MainPage = new NavigationPage((new MainPage()));
         }
     }
 }

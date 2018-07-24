@@ -17,6 +17,7 @@ namespace SampleWhatsMyBAC.Views
         public DrinksOverviewPage()
         {
             InitializeComponent();
+            NavigationPage.SetHasBackButton(this, false);
             this.drinksList.ItemsSource = GlobalConfig.ActiveDrinksList.Select(x=>x.Name);
         }
 

@@ -14,7 +14,6 @@ namespace SampleWhatsMyBAC.Views
     {
         public MainPage()
         {
-            NavigationPage.SetHasBackButton(this, false);
             InitializeComponent();
         }
     }

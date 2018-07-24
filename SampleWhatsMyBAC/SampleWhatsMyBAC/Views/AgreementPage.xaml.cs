@@ -22,11 +22,11 @@ namespace SampleWhatsMyBAC.Views
         {
             if (Settings.PersonData == null)
             {
-                Navigation.PushAsync(new SetupPage());
+                App.Current.MainPage = new SetupPage();
             }
             else
             {
-                Navigation.PushAsync(new MainPage());
+                App.Current.MainPage =  new NavigationPage(new MainPage());
             }
 
         }
